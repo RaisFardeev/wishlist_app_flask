@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <link href="{{ '/static/styles/links.css' }}" rel="stylesheet" type="text/css">
+</head>
+<body>
+{% if session.get('auth') %}
+    <p class="form-group">
+        <button type="submit" class="btn btn-primary"><a href="{{ url_for('logout') }}">Выйти</a></button>
+    </p>
+{% else %}
+ <p class="form-group">
+        <button type="submit" class="btn btn-primary"><a href="{{ url_for('login') }}">Войти</a></button>
+    </p>
+    <p class="form-group">
+        <button type="submit" class="btn btn-primary"><a href="{{ url_for('signup') }}">Зарегистрироваться</a></button>
+    </p>
+{% endif %}
+</div>
+{% block content %}
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,17 @@
+{% extends 'main.html' %}
+{%  block title %}
+    Мои желания
+{% endblock %}
+{% block content %}
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary"><a href="{{ url_for('wish_create') }}">Создать желание</a></button>
+    </div>
+    {% for message in get_flashed_messages() %}
+        <div class="alert alert-danger">{{ message }}</div>
+    {% endfor %}
+    {% for wish in wishes %}
+      <div class="row-col">
+          <a href="{{ url_for('detail_view', wish_id=wish.id) }}"><p>{{wish.name}}</p></a>
+          <p>Цена:{{ wish.price }}</p></div>
+  {% endfor %}
+{% endblock %}

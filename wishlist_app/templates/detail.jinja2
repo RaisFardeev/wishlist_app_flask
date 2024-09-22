@@ -1,0 +1,17 @@
+{% extends 'main.html' %}
+
+{% block title %}
+
+{% endblock %}
+{% block content %}
+<div class="form-group">
+        <button type="submit" class="btn btn-primary"><a style="color:white" href="{{ url_for('wish_delete',wish_id = wish.id) }}">Удалить</a></button>
+    </div>
+<div class="form-group">
+        <button type="submit" class="btn btn-primary"><a href="{{ url_for('wish_edit',wish_id=wish.id) }}">Редактировать</a></button>
+    </div>
+    <a href="{{ wish.url }}"><h2>{{ wish.name }}</h2></a>
+    <div>Дата создания:{{wish.uploaded}}</div>
+    <div>Описание:{{wish.description}}</div>
+    <div>Цена:{{ wish.price }}</div>
+{% endblock %}
