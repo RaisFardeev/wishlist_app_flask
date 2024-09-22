@@ -1,0 +1,4 @@
+venv/
+.idea/
+wishlist_app/flask_session/
+wishlist_app/.env
