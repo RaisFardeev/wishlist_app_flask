@@ -1,0 +1,10 @@
+flask==3.0.3
+flask-mysqldb==2.0.0
+flask-session==0.8.0
+flask-bcrypt==1.0.1
+sqlalchemy==2.0.35
+flask-wtf==1.2.1
+wtforms==3.1.2
+python-dotenv==1.0.1
+flask-sqlalchemy==3.1.1
+email_validator==2.2.0
